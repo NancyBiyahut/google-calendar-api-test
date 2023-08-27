@@ -1,0 +1,20 @@
+<!-- calendar_integration/templates/calendar_integration/add_event.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event</title>
+</head>
+<body>
+    <h1>Add Event</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="duration">Duration (hours):</label>
+        <input type="text" id="duration" name="duration" required><br><br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+        <button type="submit">Add Event</button>
+    </form>
+    <br>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
