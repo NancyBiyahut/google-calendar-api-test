@@ -1,20 +1,13 @@
-<!-- calendar_integration/templates/calendar_integration/get_hours.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Get Hours</title>
-</head>
-<body>
-    <h1>Hours Report</h1>
-    <h2>Total Hours: {{ total_hours }}</h2>
-    <h2>Average Hours: {{ average_hours }}</h2>
-    <h3>Hours List:</h3>
-    <ul>
-        {% for hour in hours %}
-            <li>{{ hour.0 }}: {{ hour.1 }}</li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="{% url 'index' %}">Back to Home</a>
-</body>
-</html>
+<!-- Get Hours Template -->
+<h1>Hours Report</h1>
+<h2>Total Hours: {{ total_hours }}</h2>
+<h2>Average Hours: {{ average_hours }}</h2>
+<h3>Hours List:</h3>
+<ul>
+    {% for hour in hours %}
+        <li>{{ hour.activity__name }}: {{ hour.total_hours }}</li>
+    {% endfor %}
+</ul>
+<br>
+<a href="{% url 'index' %}">Home</a>
+<a href="https://calendar.google.com/calendar/u/0/r">View in Calendar</a>
