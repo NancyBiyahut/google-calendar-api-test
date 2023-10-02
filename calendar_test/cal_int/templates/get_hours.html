@@ -1,13 +1,75 @@
-<!-- Get Hours Template -->
-<h1>Hours Report</h1>
-<h2>Total Hours: {{ total_hours }}</h2>
-<h2>Average Hours: {{ average_hours }}</h2>
-<h3>Hours List:</h3>
-<ul>
-    {% for hour in hours %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Outfit:wght@300&family=Roboto:wght@100;300&family=Ruda&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'progress.css' %}" />
+  </head>
+
+  <body style="background-color: #1a222d">
+    <nav>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="{% url 'index' %}" class="home-btn">Home</a></li>
+                <li><a href="https://calendar.google.com/calendar/u/0/r"  class="cal-btn">View in Calendar</a></li>
+               
+            </ul>
+        </div>
+    </nav> 
+    <div class="wrapper">
+      <!-- <h1>Hours Report</h1>
+      <h2>Total Hours: {{ total_hours }}</h2>
+      <h2>Average Hours: {{ average_hours }}</h2> -->
+
+
+
+      <div  class="form-bg">
+        <div style="width: 766px; height: 600px; left: 0px; top: 0px; position: absolute; background: rgba(255, 255, 255, 0.20); border-radius: 20px"></div>
+        <div   class = "stat-bg">
+          <div style="left: 0px; top: 7px; position: absolute; color: white; font-size: 25px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Total<br/>hour</div>
+          <div style="left: 0px; top: 110px; position: absolute; color: white; font-size: 25px; font-family: Roboto; font-weight: 500; word-wrap: break-word">{{ total_hours }}</div>
+          <div style="left: 273px; top: 103px; position: absolute; color: white; font-size: 25px; font-family: Roboto; font-weight: 500; word-wrap: break-word">{{ average_hours }}</div>
+          <div style="left: 273px; top: 0px; position: absolute; color: white; font-size: 25px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Average<br/>hour</div>
+        </div>
+
+       <div class="list">
+       <h2>Hours List:</h2>
+      <ul>
+        {% for hour in hours %}
         <li>{{ hour.activity__name }}: {{ hour.total_hours }}</li>
-    {% endfor %}
-</ul>
-<br>
-<a href="{% url 'index' %}">Home</a>
-<a href="https://calendar.google.com/calendar/u/0/r">View in Calendar</a>
+        {% endfor %}
+      </ul>
+
+    </div>
+      </div>
+
+      
+     
+      
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+<!-- <div class="nav">
+    <div class="home-div">
+      <a href="{% url 'index' %}" class="home-btn">Home</a>
+    </div>
+    <div class="home-div-b">
+        <a href="https://calendar.google.com/calendar/u/0/r"  class="home-btn">View in Calendar</a>
+      </div>
+    </div> -->

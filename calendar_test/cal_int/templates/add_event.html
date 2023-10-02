@@ -1,16 +1,44 @@
 <!-- Add Event Template -->
-<a href="{% url 'index' %}">Home</a>
-<form method="post">
-    {% csrf_token %}
-    <label for="duration">Duration (hours):</label>
-    <input type="text" id="duration" name="duration" required><br><br>
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" required><br><br>
-    <label for="activity">Activity:</label>
-    <select name="activity">
-        {% for activity in activities %}
-            <option value="{{ activity.name }}">{{ activity.name }}</option>
-        {% endfor %}
-    </select><br><br>
-    <button type="submit">Add Event</button>
-</form>
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Outfit:wght@300&family=Roboto:wght@100;300&family=Ruda&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'commit.css' %}" />
+  </head>
+
+  <body style="background-color: #1A222D;">
+    <div class="home-div">
+        <a href="{% url 'index' %}" class="home-btn">Home</a>
+    </div>
+    <div class="wrapper">
+      <form method="post">
+        {% csrf_token %}
+        <label for="duration">Duration (hours):</label>
+        <input type="text" id="duration" name="duration" required /><br /><br />
+        <label for="description">Description:</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          required/><br /><br />
+        <label for="activity">Activity:</label>
+        <select name="activity">
+          {% for activity in activities %}
+          <option value="{{ activity.name }}">{{ activity.name }}</option>
+          {% endfor %}</select
+        ><br /><br />
+        <button type="submit" class="submit-btn">Add Event</button>
+      </form>
+    </div>
+  </body>
+</html>

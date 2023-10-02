@@ -1,17 +1,44 @@
+{% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Google Calendar Integration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Outfit:wght@300&family=Roboto:wght@100;300&family=Ruda&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
-<body>
-    <h1>Doing things the hard way</h1>
-    <a href="{% url 'add_event' %}">Commit</a>
-    <br>
-    <a href="{% url 'get_hours' %}">Progress</a>
-     <br>
-     <a href="{% url 'add_activity' %}">Activity</a>
-    
+<body style="background-image: url('{% static 'assets/desktop.png' %}')">
 
+
+
+        <div class="wrapper">
+            <header>
+                <nav>
+                    <div class="nav-bar">
+                        <ul>
+                            <li><a href="{% url 'add_event' %}" class="nav-btn">Commit</a></li>
+                            <li><a href="{% url 'get_hours' %}">Progress</a></li>
+                            <li><a href="{% url 'add_activity' %}">Activity</a></li>
+                        </ul>
+                    </div>
+                </nav>  
+            </header>
+            <main>
+                <div class="left-col">
+                    <h1>Doing things the <strong>hard</strong> way</h1>
+                </div>
+                <div class="right-col">
+                    <div class="vector">
+                        <img src="{% static '/assets/girl-vector.png' %}" height="486px" width="600px"  >
+                    </div>
+                </div>
+            </main>
+        </div>
+       
 </body>
 </html>
